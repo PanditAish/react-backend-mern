@@ -9,7 +9,10 @@ const connectDb = require("./Utils/Db");
 const errorMiddelware = require('./Middleware/error-middleware');
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL,  //"http://localhost:5173"
+    origin: [
+        process.env.FRONTEND_URL,
+        "http://localhost:5173"
+    ],  
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 };
